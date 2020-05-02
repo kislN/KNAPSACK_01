@@ -1,6 +1,5 @@
 from scipy.optimize import linprog
 
-
 def bnb_recursive(capacity, weights, costs, n, bounds, low_bound=0, ans=0):
     solve = linprog([-x for x in costs], [weights], [capacity], bounds=bounds)
 
