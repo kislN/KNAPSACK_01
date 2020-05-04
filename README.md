@@ -28,7 +28,7 @@ We study the following algorithm:
 | O(N * W) | O(2^{N-1}-1) (wc) | O(N * log(N)) | O(N)    |
 
 
-All tests and comparisons are made on [these]() and [these]() benchmarks.            
+All tests and comparisons are made on [these](https://people.sc.fsu.edu/~jburkardt/datasets/knapsack_01/knapsack_01.html) and [these](http://artemisa.unicauca.edu.co/~johnyortega/instances_01_KP/) benchmarks.            
 
 We put the time limit of 90 seconds. If method works longer than this time we will stop it.        	
 
