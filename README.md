@@ -1,7 +1,7 @@
 # Knapsack 0-1 problem
 <img src="./data/knaps.png" width="500" align="center">  
 
-Given *weights* and *values* of *n items*, put these items in a knapsack of *capacity W* to get                           		
+Given *weights* and *values* of *n items*, put these items in a knapsack of *capacity W* to get <br/>                		
 the maximum total value in the knapsack.     
 
 Here we research different ways to solve the knapsack 0-1 problem and compare them.     
@@ -194,7 +194,8 @@ The interactive graph is [here](https://github.com/kislN/KNAPSACK_01/blob/master
 ## The solution of each benchmark
 
 We put the time limit of 90 seconds.  
-Here is the second very long table. **You don’t have enough time to scroll through it! Don't try.**
+Here is the second very long table.           
+**You don’t have enough time to scroll through it! Don't try.**
 
 |      | Method               | Knapsack's ID | Number of items | Optimal profit | Found profit | Found weight | Found X                                                      | Passed                   |
 | ---- | -------------------- | ------------- | --------------- | -------------- | ------------ | ------------ | ------------------------------------------------------------ | ------------------------ |
