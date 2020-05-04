@@ -46,7 +46,6 @@ def bnb_recursive(capacity, weights, costs, bounds, low_bound=0, fixed_weight=0,
 
 
 def branch_and_bound(capacity, weights, costs):
-    print('hey')
     n = len(costs)
     bounds = [[0, 1]] * n
     optimal_profit, items = bnb_recursive(capacity, weights, costs, bounds)

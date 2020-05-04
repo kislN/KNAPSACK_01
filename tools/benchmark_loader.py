@@ -1,7 +1,5 @@
 import requests
 import numpy as np
-import pandas as pd
-from datetime import datetime
 from os.path import join
 import os
 
@@ -71,6 +69,9 @@ def get_all_knapsacks() -> list:
 
     for file_name in os.listdir(join(path, dir_large)):
         knapsacks.append(get_one_more_knapsack(dir_large, file_name))
+
+    knapsacks = sorted(knapsacks, key=lambda x: x['n'])
+    knapsacks
 
     return knapsacks
 

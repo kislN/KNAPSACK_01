@@ -1,6 +1,6 @@
 import operator
 
-def greedy_full_sort(capacity, weights, costs):
+def greedy_algorithm(capacity, weights, costs):
 
   n = len(weights)
   items  = [0] * n
