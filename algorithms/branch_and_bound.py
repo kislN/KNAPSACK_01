@@ -1,37 +1,45 @@
 from scipy.optimize import linprog
+import numpy as np
+import operator
 
 
-def bnb_recursive(capacity, weights, costs, n, bounds, low_bound=0, ans=0):
-    solve = linprog([-x for x in costs], [weights], [capacity], bounds=bounds)
+def bnb_recursive(capacity, weights, costs, bounds, low_bound=0, fixed_weight=0, ans=0):
 
-    fun = - round(solve.fun, 6)
+    solve = linprog([-x for x in costs], [weights], [capacity], bounds=bounds, method='revised simplex')
+
+    profit = - round(solve.fun, 6)
     X = [round(x, 6) for x in solve.x]
 
-    if fun <= low_bound:
+    if profit <= low_bound:
         return 0, 0
 
-    flag = True
+    inds_dict = dict(enumerate(round(abs(x - 0.5), 4) for x in X))
+    inds_dict = {key: val for key, val in inds_dict.items() if val != 0.5}
+    inds_dict = dict(sorted(inds_dict.items(), key=operator.itemgetter(1), reverse=True))
 
-    for i, x in enumerate(X):
-        if not x.is_integer():
-            flag = False
+    if len(inds_dict):
 
-            bounds[i] = [0, 0]
-            new_fun, new_X = bnb_recursive(capacity, weights, costs, n, bounds, low_bound, ans)
-            if new_fun:
-                low_bound = new_fun
+        i = list(inds_dict.keys())[0]
+
+        bounds[i] = [0, 0]
+        new_profit, new_X = bnb_recursive(capacity, weights, costs, bounds, low_bound, fixed_weight, ans)
+        if new_profit:
+            low_bound = new_profit
+            ans = new_X
+
+        bounds[i] = [1, 1]
+        fixed_weight += weights[i]
+        if fixed_weight <= capacity:
+            new_profit, new_X = bnb_recursive(capacity, weights, costs, bounds, low_bound, fixed_weight, ans)
+            if new_profit:
+                low_bound = new_profit
                 ans = new_X
 
-            bounds[i] = [1, 1]
-            new_fun, new_X = bnb_recursive(capacity, weights, costs, n, bounds, low_bound, ans)
-            if new_fun:
-                low_bound = new_fun
-                ans = new_X
+        bounds[i] = [0, 1]
+        fixed_weight -= weights[i]
 
-            bounds[i] = [0, 1]
-
-    if flag:
-        low_bound = fun
+    else:
+        low_bound = profit
         ans = X
 
     return low_bound, ans
@@ -40,5 +48,6 @@ def bnb_recursive(capacity, weights, costs, n, bounds, low_bound=0, ans=0):
 def branch_and_bound(capacity, weights, costs):
     n = len(costs)
     bounds = [[0, 1]] * n
-    fun, x = bnb_recursive(capacity, weights, costs, n, bounds)
-    return fun, x
+    optimal_profit, items = bnb_recursive(capacity, weights, costs, bounds)
+    optimal_weight = (np.array(weights) * np.array(items)).sum()
+    return int(optimal_profit), int(optimal_weight), list(np.array(items, dtype=np.int))
