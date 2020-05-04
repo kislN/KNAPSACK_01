@@ -189,7 +189,7 @@ Here is the first very long table.
 
 <img src="./data/output/meantime_half.png" width="600" align="center">
 
-For the interactive graph and more details welcome to [the report]().
+The interactive graph is [here]().
 
 ## The solution of each benchmark
 
