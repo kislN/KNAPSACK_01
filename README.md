@@ -26,6 +26,8 @@ We study the following algorithm:
 | Dynamic  | BnB               | Greedy        | Genetic |
 | -------- | ----------------- | ------------- | ------- |
 | O(N * W) | O(2^{N-1}-1) (wc) | O(N * log(N)) | O(N)    |
+
+
 All tests and comparisons are made on [these]() and [these]() benchmarks.            
 
 We put the time limit of 90 seconds. If method works longer than this time we will stop it.        	
