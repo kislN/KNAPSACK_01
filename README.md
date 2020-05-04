@@ -1,5 +1,5 @@
 # Knapsack 0-1 problem
-<img src="./data/knaps.png" width="600" align="center">  
+<img src="./data/knaps.png" width="500" align="center">  
 
 Given *weights* and *values* of *n items*, put these items in a knapsack of *capacity W* to get the 
 maximum total value in the knapsack.     
@@ -185,9 +185,9 @@ Here is the first very long table.
 | 146 | greedy\_algorithm    | 36            | 10000           | 0\.0072803497314453125   | 0\.00623011589050293     | 0\.005967855453491211    | 0\.009643077850341797    | 2\.802705504715656e\-06  |
 | 147 | genetic\_algorithm   | 36            | 10000           | 90 seconds have passed\! |                          |                          |                          |                          |
 
-<img src="./data/output/meantime_all.png" width="600" align="center">
+<img src="./data/output/meantime_all.png" align="center">
 
-<img src="./data/output/meantime_half.png" width="600" align="center">
+<img src="./data/output/meantime_half.png" align="center">
 
 The interactive graph is [here]().
 
