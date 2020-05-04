@@ -1,8 +1,7 @@
 # Knapsack 0-1 problem
 <img src="./data/knaps.png" width="500" align="center">  
 
-Given *weights* and *values* of *n items*, put these items in a knapsack of *capacity W* to get                     		
-
+Given *weights* and *values* of *n items*, put these items in a knapsack of *capacity W* to get                           		
 the maximum total value in the knapsack.     
 
 Here we research different ways to solve the knapsack 0-1 problem and compare them.     
@@ -11,14 +10,14 @@ We study the following algorithm:
 * *heuristic algorithms:* **Greedy, Genetic Algorithm**
 
 ## Structure of the repo
-* analysis of the algorithms and demonstration of the results - [report]() 
+* analysis of the algorithms and demonstration of the results - [report](https://github.com/kislN/KNAPSACK_01/blob/master/report.ipynb) 
 * implementation of the algorithms:
-    * [Dynamic programming]()
-    * [Branch and bound]()
-    * [Greedy]()
-    * [Genetic]()
-* input and output [data]()
-* [tools]() for testing, comparisons and other
+    * [Dynamic programming](https://github.com/kislN/KNAPSACK_01/blob/master/algorithms/dynamic_programming.py)
+    * [Branch and bound](https://github.com/kislN/KNAPSACK_01/blob/master/algorithms/branch_and_bound.py)
+    * [Greedy](https://github.com/kislN/KNAPSACK_01/blob/master/algorithms/greedy.py)
+    * [Genetic](https://github.com/kislN/KNAPSACK_01/blob/master/algorithms/genetic.py)
+* input and output [data](https://github.com/kislN/KNAPSACK_01/tree/master/data)
+* [tools](https://github.com/kislN/KNAPSACK_01/tree/master/tools) for testing, comparisons and other
 
 ## The comparison of the time statistics
 
@@ -190,7 +189,7 @@ Here is the first very long table.
 
 <img src="./data/output/meantime_half.png" align="center">
 
-The interactive graph is [here]().
+The interactive graph is [here](https://github.com/kislN/KNAPSACK_01/blob/master/data/output/mean_time.html).
 
 ## The solution of each benchmark
 
