@@ -38,3 +38,4 @@ def get_time(knapsacks, methods=[dynamic, bnb, greedy, genetic], iters=3, lim_se
     df.to_csv('./data/output/' + file_name)
     return df
 
+

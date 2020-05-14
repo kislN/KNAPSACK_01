@@ -16,6 +16,7 @@ def get_knapsack(n='01') -> dict:
             'weights':  w.text,
             'costs':    p.text,
             'optimal':  s.text,
+
             }
 
     kdct = {k: v.split('\n') for k, v in kdct.items()}
@@ -26,6 +27,7 @@ def get_knapsack(n='01') -> dict:
     kdct['optimal_profit'] = (np.array(kdct['costs']) * np.array(kdct['optimal'])).sum()
 
     print('P' + n, 'is loaded!')
+    kdct['name'] = 'P_' + n
 
     return kdct
 
@@ -48,6 +50,7 @@ def get_one_more_knapsack(direct='large_scale', file_name='knapPI_1_100_1000_1')
         file = file.split('\n')
         kdct['optimal_profit'] = int(file[0])
 
+    kdct['name'] = file_name
     print(file_name + ' is loaded!')
 
     return kdct
